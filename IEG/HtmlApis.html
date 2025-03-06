@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML APIs Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px 0;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      #map {
+        height: 300px;
+        width: 100%;
+        background-color: #f5f5f5;
+      }
+      .output {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 10px;
+        min-height: 20px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML APIs Demo</h1>
+    <p>This page demonstrates several useful HTML APIs with simple examples.</p>
+
+    <!-- Geolocation API -->
+    <section>
+      <h2>1. Geolocation API</h2>
+      <p>Get your current location coordinates:</p>
+      <button id="get-location">Get My Location</button>
+      <div id="location-output" class="output"></div>
+      <script>
+        document
+          .getElementById("get-location")
+          .addEventListener("click", function () {
+            const output = document.getElementById("location-output");
+
+            if (!navigator.geolocation) {
+              output.textContent =
+                "Geolocation is not supported by your browser";
+              return;
+            }
+
+            output.textContent = "Locating...";
+
+            navigator.geolocation.getCurrentPosition(
+              function (position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                output.innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+              },
+              function (error) {
+                switch (error.code) {
+                  case error.PERMISSION_DENIED:
+                    output.textContent =
+                      "User denied the request for Geolocation.";
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                    output.textContent = "Location information is unavailable.";
+                    break;
+                  case error.TIMEOUT:
+                    output.textContent =
+                      "The request to get user location timed out.";
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    output.textContent = "An unknown error occurred.";
+                    break;
+                }
+              }
+            );
+          });
+      </script>
+    </section>
+
+    <!-- Local Storage API -->
+    <section>
+      <h2>2. Web Storage API (localStorage)</h2>
+      <p>Store and retrieve data in your browser:</p>
+      <input
+        type="text"
+        id="storage-input"
+        placeholder="Enter something to store"
+      />
+      <button id="save-data">Save to localStorage</button>
+      <button id="load-data">Load from localStorage</button>
+      <button id="clear-data">Clear localStorage</button>
+      <div id="storage-output" class="output"></div>
+      <script>
+        document
+          .getElementById("save-data")
+          .addEventListener("click", function () {
+            const input = document.getElementById("storage-input");
+            const output = document.getElementById("storage-output");
+
+            if (input.value) {
+              localStorage.setItem("storedData", input.value);
+              output.textContent = `Data saved: "${input.value}"`;
+            } else {
+              output.textContent = "Please enter something to store";
+            }
+          });
+
+        document
+          .getElementById("load-data")
+          .addEventListener("click", function () {
+            const output = document.getElementById("storage-output");
+            const data = localStorage.getItem("storedData");
+
+            if (data) {
+              output.textContent = `Retrieved data: "${data}"`;
+            } else {
+              output.textContent = "No data found in localStorage";
+            }
+          });
+
+        document
+          .getElementById("clear-data")
+          .addEventListener("click", function () {
+            localStorage.removeItem("storedData");
+            document.getElementById("storage-output").textContent =
+              "localStorage item cleared";
+          });
+      </script>
+    </section>
+
+    <!-- Drag and Drop API -->
+    <section>
+      <h2>3. Drag and Drop API</h2>
+      <p>Try dragging the items below to the drop zone:</p>
+      <div style="display: flex; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div
+            draggable="true"
+            id="drag1"
+            style="
+              width: 100px;
+              height: 40px;
+              background-color: #f0ad4e;
+              text-align: center;
+              line-height: 40px;
+            "
+          >
+            Item 1
+          </div>
+          <div
+            draggable="true"
+            id="drag2"
+            style="
+              width: 100px;
+              height: 40px;
+              background-color: #5bc0de;
+              text-align: center;
+              line-height: 40px;
+            "
+          >
+            Item 2
+          </div>
+        </div>
+
+        <div
+          id="drop-zone"
+          style="
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #aaa;
+            padding: 10px;
+            text-align: center;
+          "
+        >
+          Drop Zone
+        </div>
+      </div>
+      <div id="drag-output" class="output"></div>
+      <script>
+        // Drag events
+        document.querySelectorAll('[draggable="true"]').forEach((item) => {
+          item.addEventListener("dragstart", function (e) {
+            e.dataTransfer.setData("text", this.id);
+            document.getElementById(
+              "drag-output"
+            ).textContent = `Started dragging ${this.textContent}`;
+          });
+        });
+
+        // Drop zone events
+        const dropZone = document.getElementById("drop-zone");
+
+        dropZone.addEventListener("dragover", function (e) {
+          e.preventDefault(); // Allow drop
+        });
+
+        dropZone.addEventListener("dragenter", function (e) {
+          e.preventDefault();
+          this.style.background = "#e9e9e9";
+        });
+
+        dropZone.addEventListener("dragleave", function () {
+          this.style.background = "";
+        });
+
+        dropZone.addEventListener("drop", function (e) {
+          e.preventDefault();
+          this.style.background = "";
+
+          const id = e.dataTransfer.getData("text");
+          const element = document.getElementById(id);
+
+          this.appendChild(element);
+          document.getElementById(
+            "drag-output"
+          ).textContent = `Dropped ${element.textContent} into the drop zone`;
+        });
+      </script>
+    </section>
+
+    <!-- Fetch API -->
+    <section>
+      <h2>4. Fetch API</h2>
+      <p>Fetch data from a public API:</p>
+      <button id="fetch-data">Fetch Random User</button>
+      <div id="fetch-output" class="output"></div>
+      <script>
+        document
+          .getElementById("fetch-data")
+          .addEventListener("click", function () {
+            const output = document.getElementById("fetch-output");
+            output.textContent = "Loading...";
+
+            fetch("https://randomuser.me/api/")
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error("Network response was not ok");
+                }
+                return response.json();
+              })
+              .then((data) => {
+                const user = data.results[0];
+                output.innerHTML = `
+              <strong>Random User Data:</strong><br>
+              Name: ${user.name.first} ${user.name.last}<br>
+              Email: ${user.email}<br>
+              Location: ${user.location.city}, ${user.location.country}<br>
+            `;
+              })
+              .catch((error) => {
+                output.textContent = `Error: ${error.message}`;
+              });
+          });
+      </script>
+    </section>
+
+    <!-- Web Notifications API -->
+    <section>
+      <h2>5. Web Notifications API</h2>
+      <p>Send browser notifications:</p>
+      <button id="notification-button">Show Notification</button>
+      <div id="notification-output" class="output"></div>
+      <script>
+        document
+          .getElementById("notification-button")
+          .addEventListener("click", function () {
+            const output = document.getElementById("notification-output");
+
+            // Check if browser supports notifications
+            if (!("Notification" in window)) {
+              output.textContent =
+                "This browser does not support notifications";
+              return;
+            }
+
+            // Check if permission is already granted
+            if (Notification.permission === "granted") {
+              createNotification();
+            }
+            // Otherwise, request permission
+            else if (Notification.permission !== "denied") {
+              Notification.requestPermission().then((permission) => {
+                if (permission === "granted") {
+                  createNotification();
+                } else {
+                  output.textContent = "Notification permission denied";
+                }
+              });
+            } else {
+              output.textContent = "Notification permission previously denied";
+            }
+
+            function createNotification() {
+              const notification = new Notification("HTML APIs Demo", {
+                body: "This is a sample notification from the Web Notifications API",
+                icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+              });
+
+              output.textContent = "Notification sent!";
+
+              notification.onclick = function () {
+                output.textContent = "Notification was clicked";
+                notification.close();
+              };
+            }
+          });
+      </script>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Note:</strong> Some APIs may require specific permissions or
+        secure contexts (HTTPS) to work properly.
+      </p>
+    </footer>
+  </body>
+</html>

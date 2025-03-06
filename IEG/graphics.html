@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple HTML Graphics Elements Examples</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+      }
+      .example {
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      /* Simple CSS graphics */
+      .circle {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        margin-left: 20px;
+      }
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid green;
+        display: inline-block;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple HTML Graphics Elements Examples</h1>
+
+    <section>
+      <h2>SVG (Scalable Vector Graphics)</h2>
+      <p>SVG allows for creating vector-based graphics:</p>
+
+      <div class="example">
+        <!-- Basic shapes in SVG -->
+        <svg width="600" height="200">
+          <!-- Rectangle -->
+          <rect x="10" y="10" width="100" height="100" fill="red" />
+
+          <!-- Circle -->
+          <circle cx="170" cy="60" r="50" fill="blue" />
+
+          <!-- Ellipse -->
+          <ellipse cx="300" cy="60" rx="70" ry="40" fill="green" />
+
+          <!-- Line -->
+          <line
+            x1="400"
+            y1="10"
+            x2="500"
+            y2="110"
+            stroke="black"
+            stroke-width="5"
+          />
+
+          <!-- Polygon (Triangle) -->
+          <polygon points="510,10 450,110 570,110" fill="purple" />
+
+          <!-- Text -->
+          <text x="170" y="150" fill="red" font-size="20">
+            SVG Text Example
+          </text>
+        </svg>
+      </div>
+
+      <p>Key SVG elements:</p>
+      <ul>
+        <li><strong>&lt;rect&gt;</strong>: Rectangle</li>
+        <li><strong>&lt;circle&gt;</strong>: Circle</li>
+        <li><strong>&lt;ellipse&gt;</strong>: Ellipse</li>
+        <li><strong>&lt;line&gt;</strong>: Line</li>
+        <li><strong>&lt;polygon&gt;</strong>: Multi-sided shape</li>
+        <li><strong>&lt;text&gt;</strong>: Text in SVG</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Simple SVG Scene</h2>
+      <p>A simple scene created with SVG:</p>
+
+      <div class="example">
+        <svg width="400" height="200">
+          <!-- Sky background -->
+          <rect width="400" height="200" fill="#87CEEB" />
+
+          <!-- Sun -->
+          <circle cx="320" cy="40" r="30" fill="#FFD700" />
+
+          <!-- Mountains -->
+          <polygon points="0,200 150,80 300,200" fill="#808080" />
+          <polygon points="150,200 280,100 400,200" fill="#696969" />
+
+          <!-- Lake -->
+          <rect x="0" y="160" width="400" height="40" fill="#4682B4" />
+
+          <!-- Tree -->
+          <rect x="50" y="140" width="10" height="20" fill="#8B4513" />
+          <polygon points="35,140 65,140 55,100" fill="#228B22" />
+          <polygon points="38,110 62,110 55,80" fill="#228B22" />
+        </svg>
+      </div>
+    </section>
+
+    <section>
+      <h2>HTML Canvas Element</h2>
+      <p>The &lt;canvas&gt; element provides a drawing area:</p>
+
+      <div class="example">
+        <canvas
+          id="myCanvas"
+          width="400"
+          height="200"
+          style="border: 1px solid #000"
+        >
+          Your browser does not support the HTML canvas tag.
+        </canvas>
+      </div>
+
+      <p>
+        Note: Canvas requires JavaScript to draw graphics. Without JavaScript,
+        it's just a blank rectangular area.
+      </p>
+    </section>
+
+    <section>
+      <h2>CSS Basic Shapes</h2>
+      <p>Simple shapes can be created using only CSS:</p>
+
+      <div class="example">
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="triangle"></div>
+      </div>
+
+      <p>These shapes are created using:</p>
+      <ul>
+        <li>Circle: border-radius property</li>
+        <li>Square: width and height properties</li>
+        <li>Triangle: border manipulation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>SVG Path Element</h2>
+      <p>The path element allows creating more complex shapes:</p>
+
+      <div class="example">
+        <svg width="300" height="200">
+          <!-- Simple curved path -->
+          <path
+            d="M10,50 Q90,10 150,50 T290,50"
+            fill="none"
+            stroke="blue"
+            stroke-width="3"
+          />
+
+          <!-- Simple custom shape -->
+          <path
+            d="M100,100 L150,50 L200,100 L150,150 Z"
+            fill="red"
+            stroke="black"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+
+      <p>Path commands:</p>
+      <ul>
+        <li><strong>M</strong>: Move to</li>
+        <li><strong>L</strong>: Line to</li>
+        <li><strong>H</strong>: Horizontal line</li>
+        <li><strong>V</strong>: Vertical line</li>
+        <li><strong>Q</strong>: Quadratic Bézier curve</li>
+        <li><strong>T</strong>: Smooth quadratic Bézier</li>
+        <li><strong>Z</strong>: Close path</li>
+      </ul>
+    </section>
+  </body>
+</html>

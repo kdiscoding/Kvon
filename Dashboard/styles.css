@@ -441,6 +441,8 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   height: 200px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .bar-container {
@@ -449,6 +451,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .bar {
@@ -457,6 +460,8 @@ body {
   border-radius: 5px 5px 0 0;
   transition: height 1s ease-in-out;
   position: relative;
+  min-height: 10px; /* Ensure minimum visibility */
+    /* The height will be set inline in the HTML */
 }
 
 .bar:hover {
@@ -764,5 +769,29 @@ body {
   
   .sidebar:hover .sidebar-menu i {
       margin-right: 10px;
+  }
+}
+
+/* Fix for dropdown visibility on mobile */
+@media (max-width: 576px) {
+  .profile-dropdown .dropdown-content {
+    position: absolute;
+    right: 0;
+    top: 45px; /* Adjust this value as needed */
+    width: 200px;
+    z-index: 1100; /* Higher z-index to ensure it appears above other elements */
+  }
+  
+  /* Make sure the dropdown appears on tap/click rather than hover on mobile */
+  .profile-dropdown:active .dropdown-content,
+  .profile-btn:focus + .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add some space for the dropdown to appear */
+  .profile-dropdown {
+    margin-bottom: 50px;
   }
 }

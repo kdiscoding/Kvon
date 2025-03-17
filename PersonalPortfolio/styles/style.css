@@ -54,6 +54,7 @@
         font-size: 2.5rem;
         color: var(--dark-color);
         position: relative;
+        margin-top: 20px;
       }
 
       .section-title::after {

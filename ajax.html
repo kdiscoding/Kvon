@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <div id="demo">
+    <div id="container">
       <h2>The XMLHttpRequest Object</h2>
       <button type="button" onclick="loadDoc()">Change Content</button>
     </div>
 
+    <h2>Parsing a JSON Array.</h2>
+    <p>Data written as an JSON array will be parsed into a JavaScript array.</p>
+    <p id="demo"></p>
+    <h3>Imagine we received this text from a web server:</h3>
+    <span>'{"name":"John", "age":30, "city":"New York"}'</span>
+    <p>
+      Use the JavaScript function JSON.parse() to convert text into a JavaScript
+      object:
+    </p>
+    <p id="para"></p>
+    <h2>Create a JSON string from a JavaScript object.</h2>
+    <p id="stringify"></p>
     <script>
       function loadDoc() {
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function () {
-          document.getElementById("demo").innerHTML = this.responseText;
+          document.getElementById("container").innerHTML = this.responseText;
         };
         xhttp.open("GET", "ajax_info.txt");
         xhttp.send();
       }
+      // JSON Parse
+      const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+      const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+      const myArr = JSON.parse(text);
+      document.getElementById("demo").innerHTML = myArr[0];
+      document.getElementById("para").innerHTML = obj.name;
+
+      // JSON Stringify
+      const details = { name: "John", age: 30, city: "New York" };
+      const myJSON = JSON.stringify(details);
+      document.getElementById("stringify").innerHTML = myJSON;
     </script>
   </body>
 </html>

@@ -8,6 +8,12 @@
 
     <p id="demo"></p>
 
+    <p>
+      The "Spread" operator can be used to expand an iterable into more
+      arguments for function calls:
+    </p>
+    <p id="math"></p>
+
     <script>
       const q1 = ["Jan", "Feb", "Mar"];
       const q2 = ["Apr", "May", "Jun"];
@@ -16,6 +22,10 @@
 
       const year = [...q1, ...q2, ...q3, ...q4];
       document.getElementById("demo").innerHTML = year;
+
+      const numbers = [23, 55, 21, 87, 56];
+      let maxValue = Math.max(...numbers);
+      document.getElementById("math").innerHTML = maxValue;
     </script>
   </body>
 </html>

@@ -1,0 +1,8 @@
+.test {
+  font-weight: bold;
+  display: block;
+  margin: 15px;
+}
+.box{
+  border: 1px solid tomato;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery basics</title>
+    <script src="jQuery.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>This is a heading</h2>
+
+    <p>This is a paragraph.</p>
+    <p id="hideThis">This is another paragraph.</p>
+
+    <button>Click me</button>
+    <a href="http://jquery.com/">jQuery</a>
+    <div class="box">
+      <h2>Test Box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae mollitia eum id debitis laboriosam
+        molestias, fugiat qui. Est nesciunt rem alias magnam doloremque voluptatum modi magni voluptatem? Voluptas, sunt
+        natus?
+      </p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("a").click((event) => {
+          alert("As you can see, the link no longer took you to jquery.com");
+          event.preventDefault();
+        });
+        // selectors
+        $("button").click(function () {
+          let btnText = $("button").html();
+          btnText = "clicked!";
+          $("#hideThis").hide("slow");
+        });
+      });
+
+      // Adding and Removing an HTML Class
+      $("a").addClass("test");
+      // $("a").removeClass("test");
+
+      // Special Effects
+      $("a").click(function (event) {
+        event.preventDefault();
+
+        $(this).hide("slow"); //the link slowly disappears when clicked.
+      });
+
+      // events
+      $(".box").dblclick(() => {
+        $(".box").css("background-color", "orange");
+      });
+      $(".box").contextmenu(() => {
+        $(".box").css("background-color", "lightblue");
+      });
+      $(".box").mouseenter(() => {
+        $(".box").css("background-color", "tan");
+      });
+      $(".box").mouseleave(() => {
+        $(".box").css("background-color", "purple");
+      });
+    </script>
+  </body>
+</html>

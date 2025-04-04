@@ -1,0 +1,14 @@
+#panel, #flip, #sflip, #spanel {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel, #spanel {
+  padding: 50px;
+  display: none;
+}
+#sflip{
+  margin-top: 16px;
+}

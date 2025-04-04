@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery slides</title>
+    <link rel="stylesheet" href="styles/slide.css" />
+    <script src="jQuery.js"></script>
+  </head>
+  <body>
+    <div id="flip">Click to slide down & double click to slide up panel</div>
+    <div id="panel">
+      Any code of your own that you haven't looked at for six or more months might as well have been written by someone
+      else!
+    </div>
+    <div id="sflip">click me! to down/up</div>
+    <div id="spanel">"Don't worry if it doesn't work right. If everything did, you'd be out of a job."</div>
+
+    <script>
+      $(document).ready(function () {
+        // slide down
+        $("#flip").click(function () {
+          $("#panel").slideDown("slow");
+        });
+        // slide Up
+        $("#flip").dblclick(function () {
+          $("#panel").slideUp("slow");
+        });
+        // slide Toggle
+        $("#sflip").click(function () {
+          $("#spanel").slideToggle("slow");
+        });
+      });
+    </script>
+  </body>
+</html>

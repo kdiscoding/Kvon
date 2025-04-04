@@ -16,7 +16,8 @@
     </div>
     <div id="sflip">click me! to down/up</div>
     <div id="spanel">"Don't worry if it doesn't work right. If everything did, you'd be out of a job."</div>
-
+    <p id="p1">jQuery is fun! 🤩</p>
+    <button id="chaining">click me!</button>
     <button id="start-animation">Start Animation</button>
     <div class="hello">HELLO</div>
 
@@ -43,6 +44,10 @@
           let div = $(".hello");
           div.animate({ left: "100px", top: "300px" }, "slow");
           div.animate({ fontSize: "38px" });
+        });
+        // chaining
+        $("#chaining").click(function () {
+          $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
         });
       });
     </script>

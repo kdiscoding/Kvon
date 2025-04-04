@@ -8,7 +8,7 @@
   <body>
     <p>Demonstrate fadeIn() with different parameters.</p>
 
-    <button>Click to fade in boxes</button><br /><br />
+    <button id="fadeIn">Click to fade in boxes</button><br /><br />
 
     <div id="div1"></div>
     <br />
@@ -16,15 +16,29 @@
     <br />
     <div id="div3"></div>
 
+    <p>Demonstrate fadeOut() with different parameters.</p>
+
+    <button id="fadeOut">Click to fade out boxes</button><br /><br />
+
+    <div id="d1" style="width: 80px; height: 80px; background-color: red; display: block"></div>
+    <br />
+    <div id="d2" style="width: 80px; height: 80px; background-color: green; display: block"></div>
+    <br />
+    <div id="d3" style="width: 80px; height: 80px; background-color: blue; display: block"></div>
+
     <script>
       $(document).ready(function () {
-        // Fade effects
-        $("button").click(function () {
+        // Fade in  effects
+        $("#fadeIn").click(function () {
           $("#div1").fadeIn();
           $("#div2").fadeIn("slow");
-          $("#div3").fadeIn(3000, () => {
-            $("#div1,#div2,#div3").hide();
-          });
+          $("#div3").fadeIn(3000);
+        });
+        // Fade Out effects
+        $("#fadeOut").click(function () {
+          $("#d1").fadeOut();
+          $("#d2").fadeOut("slow");
+          $("#d3").fadeOut(3000);
         });
       });
     </script>

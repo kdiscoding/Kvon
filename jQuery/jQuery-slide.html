@@ -16,6 +16,9 @@
     <div id="sflip">click me! to down/up</div>
     <div id="spanel">"Don't worry if it doesn't work right. If everything did, you'd be out of a job."</div>
 
+    <button id="start-animation">Start Animation</button>
+    <div class="hello">HELLO</div>
+
     <script>
       $(document).ready(function () {
         // slide down
@@ -29,6 +32,12 @@
         // slide Toggle
         $("#sflip").click(function () {
           $("#spanel").slideToggle("slow");
+        });
+        // Animation
+        $("#start-animation").click(function () {
+          let div = $(".hello");
+          div.animate({ left: "100px", top: "300px" }, "slow");
+          div.animate({ fontSize: "38px" });
         });
       });
     </script>

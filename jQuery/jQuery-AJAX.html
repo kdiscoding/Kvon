@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery AJAX</title>
+    <script src="jQuery.js"></script>
+  </head>
+  <body>
+    <button class="load">load("call me!")</button>
+    <button class="asp">get();</button>
+    <button class="postTest">post();</button>
+    <div class="container"></div>
+    <script>
+      // jQuery Misc, jQuery noConflict()
+      let jq = $.noConflict();
+      jq(document).ready(function () {
+        jq("body").css({ "background-color": "#555", color: "#fff" });
+
+        // load function
+        jq(".load").click(function () {
+          jq(".container").load("demo-text.txt", function (responseTxt, statusTxt, xhr) {
+            if (statusTxt === "success") alert("External content loaded successfully!");
+            if (statusTxt === "error") alert("Error: " + xhr.status + ":" + xhr.statusTxt);
+          });
+        });
+        // get method
+        jq(".asp").click(function () {
+          jq.get("demo-test.asp", function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+        });
+        //  post
+        jq(".postTest").click(function () {
+          jq.post(
+            "demo-test-post.asp",
+            {
+              name: "Donald Duck",
+              city: "Duckburg",
+            },
+            function (data, status) {
+              alert("Data: " + data + "\nStatus: " + status);
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

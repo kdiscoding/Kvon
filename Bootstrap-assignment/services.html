@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Name - Services</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Bootcamp</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="services.html"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <!-- Bonus: Login Modal Trigger -->
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Services Header -->
+    <div class="container my-5">
+      <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <h1 class="text-body-emphasis">Our Services</h1>
+        <p class="lead">
+          We provide a wide range of technology solutions to help your business
+          succeed. Explore our offerings below and contact us for more
+          information.
+        </p>
+      </div>
+    </div>
+
+    <!-- Services Section (Accordion) -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4">What We Offer</h2>
+      <div class="accordion" id="servicesAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              <i class="bi bi-laptop me-2"></i> Web Development
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img
+                    src="images/Showcase Image.svg"
+                    class="img-fluid rounded mb-3"
+                    alt="Web Development"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <p>Our web development services include:</p>
+                  <ul>
+                    <li>Responsive website design</li>
+                    <li>E-commerce solutions</li>
+                    <li>Content management systems</li>
+                    <li>Web application development</li>
+                    <li>API development and integration</li>
+                  </ul>
+                  <p>
+                    We use the latest technologies and frameworks to build fast,
+                    secure, and scalable websites that meet your business needs
+                    and engage your audience effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              <i class="bi bi-phone me-2"></i> Mobile App Development
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img
+                    src="images/App Wireframe Illustration.svg"
+                    class="img-fluid rounded mb-3"
+                    alt="Mobile App Development"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <p>Our mobile app development services include:</p>
+                  <ul>
+                    <li>iOS app development</li>
+                    <li>Android app development</li>
+                    <li>Cross-platform app development</li>
+                    <li>App maintenance and support</li>
+                    <li>App store optimization</li>
+                  </ul>
+                  <p>
+                    We build user-friendly, high-performance mobile applications
+                    that help you connect with your customers and achieve your
+                    business goals on all major platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              <i class="bi bi-graph-up me-2"></i> Digital Marketing
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img
+                    src="images/Status Update Illustration.svg"
+                    class="img-fluid rounded mb-3"
+                    alt="Digital Marketing"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <p>Our digital marketing services include:</p>
+                  <ul>
+                    <li>Search engine optimization (SEO)</li>
+                    <li>Pay-per-click advertising (PPC)</li>
+                    <li>Social media marketing</li>
+                    <li>Email marketing campaigns</li>
+                    <li>Content marketing strategy</li>
+                    <li>Analytics and reporting</li>
+                  </ul>
+                  <p>
+                    We develop and implement comprehensive digital marketing
+                    strategies that help you increase visibility, attract more
+                    customers, and grow your business in the digital landscape.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              <i class="bi bi-cloud me-2"></i> Cloud Solutions
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img
+                    src="images/Cloud Upload Illustration.svg"
+                    class="img-fluid rounded mb-3"
+                    alt="Cloud Solutions"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <p>Our cloud solutions include:</p>
+                  <ul>
+                    <li>Cloud migration services</li>
+                    <li>Cloud infrastructure setup and management</li>
+                    <li>Cloud security implementation</li>
+                    <li>Backup and disaster recovery planning</li>
+                    <li>DevOps services and automation</li>
+                    <li>Performance optimization</li>
+                  </ul>
+                  <p>
+                    We help you leverage the power of cloud computing to improve
+                    scalability, reduce costs, and enhance the overall
+                    efficiency of your business operations with reliable and
+                    secure solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Our Pricing</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Basic</th>
+              <th scope="col">Standard</th>
+              <th scope="col">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Web Development</th>
+              <td>
+                <div class="fw-bold">$1,999</div>
+                <ul class="list-unstyled">
+                  <li>5 Pages</li>
+                  <li>Responsive Design</li>
+                  <li>Basic SEO</li>
+                  <li>Contact Form</li>
+                  <li><del>Content Management</del></li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$3,999</div>
+                <ul class="list-unstyled">
+                  <li>10 Pages</li>
+                  <li>Responsive Design</li>
+                  <li>Advanced SEO</li>
+                  <li>Contact Form</li>
+                  <li>Content Management</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$7,999</div>
+                <ul class="list-unstyled">
+                  <li>Unlimited Pages</li>
+                  <li>Responsive Design</li>
+                  <li>Advanced SEO</li>
+                  <li>Contact Form</li>
+                  <li>Content Management</li>
+                  <li>E-commerce Features</li>
+                  <li>Custom Functionality</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Mobile App Development</th>
+              <td>
+                <div class="fw-bold">$5,999</div>
+                <ul class="list-unstyled">
+                  <li>Single Platform</li>
+                  <li>Basic Features</li>
+                  <li>User Authentication</li>
+                  <li><del>Payment Integration</del></li>
+                  <li><del>Push Notifications</del></li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$9,999</div>
+                <ul class="list-unstyled">
+                  <li>Single Platform</li>
+                  <li>Advanced Features</li>
+                  <li>User Authentication</li>
+                  <li>Payment Integration</li>
+                  <li>Push Notifications</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$14,999</div>
+                <ul class="list-unstyled">
+                  <li>Cross-Platform</li>
+                  <li>Advanced Features</li>
+                  <li>User Authentication</li>
+                  <li>Payment Integration</li>
+                  <li>Push Notifications</li>
+                  <li>Analytics Integration</li>
+                  <li>Custom Features</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Digital Marketing</th>
+              <td>
+                <div class="fw-bold">$799/mo</div>
+                <ul class="list-unstyled">
+                  <li>SEO Basics</li>
+                  <li>Social Media Setup</li>
+                  <li>Monthly Report</li>
+                  <li><del>Content Creation</del></li>
+                  <li><del>PPC Management</del></li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$1,499/mo</div>
+                <ul class="list-unstyled">
+                  <li>Advanced SEO</li>
+                  <li>Social Media Management</li>
+                  <li>Bi-weekly Reports</li>
+                  <li>Content Creation</li>
+                  <li><del>PPC Management</del></li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+              <td>
+                <div class="fw-bold">$2,999/mo</div>
+                <ul class="list-unstyled">
+                  <li>Advanced SEO</li>
+                  <li>Social Media Management</li>
+                  <li>Weekly Reports</li>
+                  <li>Content Creation</li>
+                  <li>PPC Management</li>
+                  <li>Email Marketing</li>
+                  <li>Conversion Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary btn-sm"
+                  >Get Started</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center mt-3">
+        Need a custom solution? <a href="contact.html">Contact us</a> for a
+        personalized quote tailored to your specific requirements.
+      </p>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container my-5">
+      <div class="p-5 text-center bg-primary text-white rounded-3">
+        <h2>Ready to get started?</h2>
+        <p class="lead">
+          Let's discuss how we can help your business grow with our solutions.
+        </p>
+        <a href="contact.html" class="btn btn-light btn-lg">Contact Us Today</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Bootcamp</h5>
+            <p>Street 302017, Jaipur, India</p>
+            <p>Email: info@company.com</p>
+            <p>Phone: +91 8005909828</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <h5>Follow Us</h5>
+            <div class="fs-2">
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2025 Bootcamp. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal (Bonus) -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  required
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="rememberMe"
+                />
+                <label class="form-check-label" for="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-link">Forgot Password?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

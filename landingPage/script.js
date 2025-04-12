@@ -22,7 +22,6 @@ $(document).ready(function () {
       description: "Engage users with interactive cards and UI components.",
     },
   ];
-
   // Sample data for product cards
   const products = [
     {
@@ -63,13 +62,13 @@ $(document).ready(function () {
     features.forEach((feature) => {
       const featureElement = `
         <div class="col-md-3 mb-4">
-            <div class="card h-100 text-center p-4">
-              <div class="card-body">
-                <div class="feature-icon">${feature.icon}</div>
-                <h5 class="card-title">${feature.title}</h5>
-                <p class="card-text">${feature.description}</p>
-              </div>
+          <div class="card h-100 text-center p-4">
+            <div class="card-body">
+              <div class="feature-icon">${feature.icon}</div>
+              <h5 class="card-title">${feature.title}</h5>
+              <p class="card-text">${feature.description}</p>
             </div>
+          </div>
         </div>
     `;
       featuresContainer.append(featureElement);
@@ -154,9 +153,10 @@ $(document).ready(function () {
   });
   // Smooth scrolling for navigation links
   $("a.nav-link").click(function (e) {
+    // Checks if the clicked link has a hash  (fragment identifier) in its URL.
     if (this.hash !== "") {
-      e.preventDefault();
-      const hash = this.hash;
+      e.preventDefault(); // Prevents the default anchor tag behavior (immediately jumping to the target section).
+      const hash = this.hash; // Stores the hash value for later use.
       $("html, body").animate(
         {
           scrollTop: $(hash).offset().top - 70,

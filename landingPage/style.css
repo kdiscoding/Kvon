@@ -30,6 +30,9 @@
   font-size: 30px;
   margin: 0;
 }
+.features {
+  background-color: #d0cfcb;
+}
 .productBackClr {
   background-color: #6c584c;
 }

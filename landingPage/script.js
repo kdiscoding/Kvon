@@ -22,10 +22,6 @@ $(document).ready(function () {
       description: "Engage users with interactive cards and UI components.",
     },
   ];
-<<<<<<< HEAD
-=======
-
->>>>>>> 177df71b9b240fc7389d5f8992728dcfcdc67bb8
   // Sample data for product cards
   const products = [
     {
@@ -66,7 +62,6 @@ $(document).ready(function () {
     features.forEach((feature) => {
       const featureElement = `
         <div class="col-md-3 mb-4">
-<<<<<<< HEAD
           <div class="card h-100 text-center p-4">
             <div class="card-body">
               <div class="feature-icon">${feature.icon}</div>
@@ -74,15 +69,6 @@ $(document).ready(function () {
               <p class="card-text">${feature.description}</p>
             </div>
           </div>
-=======
-            <div class="card h-100 text-center p-4">
-              <div class="card-body">
-                <div class="feature-icon">${feature.icon}</div>
-                <h5 class="card-title">${feature.title}</h5>
-                <p class="card-text">${feature.description}</p>
-              </div>
-            </div>
->>>>>>> 177df71b9b240fc7389d5f8992728dcfcdc67bb8
         </div>
     `;
       featuresContainer.append(featureElement);
@@ -167,16 +153,10 @@ $(document).ready(function () {
   });
   // Smooth scrolling for navigation links
   $("a.nav-link").click(function (e) {
-<<<<<<< HEAD
     // Checks if the clicked link has a hash  (fragment identifier) in its URL.
     if (this.hash !== "") {
       e.preventDefault(); // Prevents the default anchor tag behavior (immediately jumping to the target section).
       const hash = this.hash; // Stores the hash value for later use.
-=======
-    if (this.hash !== "") {
-      e.preventDefault();
-      const hash = this.hash;
->>>>>>> 177df71b9b240fc7389d5f8992728dcfcdc67bb8
       $("html, body").animate(
         {
           scrollTop: $(hash).offset().top - 70,
